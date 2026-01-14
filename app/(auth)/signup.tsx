@@ -33,6 +33,14 @@ const Signup = () => {
   };
 
   const handleSignup = () => {
+    if (!isName) {
+      setToast({
+        message: "Pleace input your name",
+        type: "error",
+      });
+      return;
+    }
+
     if (!isValidEmail(email)) {
       setToast({
         message: "Pleace input valid email",
@@ -137,9 +145,6 @@ const Signup = () => {
               </View>
               <Text className="text-white">Agree Term and Condition</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text className="text-white underline">Forgate Password ?</Text>
-            </TouchableOpacity>
           </View>
 
           {/* button  */}
@@ -147,14 +152,16 @@ const Signup = () => {
             onPress={handleSignup}
             className={`rounded-xl mt-5 py-4 bg-white`}
           >
-            <Text className={`text-center font-bold text-blue-600`}>Login</Text>
+            <Text className={`text-center font-bold text-blue-600`}>
+              Signup
+            </Text>
           </TouchableOpacity>
 
-          {/* dont have account */}
+          {/* alrady haven and account */}
           <View className="flex-row justify-center mt-5">
-            <Text className="text-white">Don't have an account ?</Text>
-            <TouchableOpacity onPress={() => router.push("/(auth)/signup")}>
-              <Text className="text-white underline">Sign Up</Text>
+            <Text className="text-white">Already have an account ? </Text>
+            <TouchableOpacity onPress={() => router.push("/(auth)/login")}>
+              <Text className="text-white underline">Login</Text>
             </TouchableOpacity>
           </View>
         </View>
