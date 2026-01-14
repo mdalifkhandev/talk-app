@@ -1,9 +1,16 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import React from "react";
+import { router } from "expo-router";
+import React, { useEffect } from "react";
 import { StatusBar, Text, View } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 const SplashScreen = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/(auth)/login");
+    }, 3000);
+  }, []);
+
   return (
     <View className="flex-1 bg-blue-600 justify-center items-center">
       <StatusBar barStyle="light-content" backgroundColor="#2563eb" />
@@ -33,7 +40,7 @@ const SplashScreen = () => {
       {/* footer */}
       <View className="absolute bottom-10">
         <Text className="text-blue-200 text-sm font-bold tracking-tighter uppercase">
-          Powered by Alif Khan
+          Powered by : Alif Khan
         </Text>
       </View>
     </View>
