@@ -150,7 +150,7 @@ const Signup = () => {
           {/* button  */}
           <TouchableOpacity
             onPress={handleSignup}
-            className={`rounded-xl mt-5 py-4 bg-white`}
+            className={`rounded-xl mt-5 py-3 bg-white`}
           >
             <Text className={`text-center font-bold text-blue-600`}>
               Signup
